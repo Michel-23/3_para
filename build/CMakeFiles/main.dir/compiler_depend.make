@@ -184,7 +184,6 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
-  ../class.h \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -209,7 +208,8 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/12/tr1/modified_bessel_func.tcc \
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
-  /usr/include/c++/12/tr1/riemann_zeta.tcc
+  /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  ../class.h
 
 CMakeFiles/main.dir/realisation.cpp.o: ../realisation.cpp \
   /usr/include/stdc-predef.h \

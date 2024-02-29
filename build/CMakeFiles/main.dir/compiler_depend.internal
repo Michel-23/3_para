@@ -185,7 +185,6 @@ CMakeFiles/main.dir/main.cpp.o
  /usr/include/c++/12/bits/ostream.tcc
  /usr/include/c++/12/istream
  /usr/include/c++/12/bits/istream.tcc
- /home/s23380426@unn.global/3_para/class.h
  /usr/include/c++/12/cmath
  /usr/include/math.h
  /usr/include/x86_64-linux-gnu/bits/math-vector.h
@@ -211,6 +210,7 @@ CMakeFiles/main.dir/main.cpp.o
  /usr/include/c++/12/tr1/poly_hermite.tcc
  /usr/include/c++/12/tr1/poly_laguerre.tcc
  /usr/include/c++/12/tr1/riemann_zeta.tcc
+ /home/s23380426@unn.global/3_para/class.h
 
 CMakeFiles/main.dir/realisation.cpp.o
  /home/s23380426@unn.global/3_para/realisation.cpp
