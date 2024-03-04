@@ -21,8 +21,31 @@ int main(){
     Fraction result4 = fract / fract_copy;
     std::cout << result4 << std:: endl;
 
-    Fraction result5 = fract > fract_copy;
+    if (fract > fract_copy){
+        std::cout << "true" << std::endl;
+    }
+    else std::cout << "false" << std::endl;
+
+    if (fract < fract_copy){
+        std::cout << "true" << std::endl;
+    }
+    else std::cout << "false" << std::endl;
+
+    if (fract != fract_copy){
+        std::cout << "true" << std::endl;
+    }
+    else std::cout << "false" << std::endl;
+
+    if (fract == fract_copy){
+        std::cout << "true" << std::endl;
+    }
+    else std::cout << "false" << std::endl;
+
+    Fraction result5 = ~fract;
     std::cout << result5;
+
+    Fraction result6 = fract++;
+    std::cout << fract;
 
     return 0;
 }

@@ -57,53 +57,105 @@ public:
     // Перегрузка операции больше
     bool operator> (const Fraction& fraction) const /*мы НЕ меняем объект класса*/{
         int32_t new_num = _num * fraction._denom;
-        uint32_t new_denom = _denom * fraction._denom;
         int32_t new_num1 = fraction._num * _denom;
-        uint32_t new_denom1 = fraction._denom * _denom;
         if (new_num <= new_num1){
-            return false; // он создает дробь 0/1000000
+            return false;
         }
-        if (new_num > new_num1){
+        else{
             return true;
         }
     }
 
     // Перегрузка операции меньше
-    Fraction operator< (const Fraction& fraction) const{
+    bool operator< (const Fraction& fraction) const{
         int32_t new_num = _num * fraction._denom;
-        uint32_t new_denom = _denom * fraction._denom;
         int32_t new_num1 = fraction._num * _denom;
-        uint32_t new_denom1 = fraction._denom * _denom;
         if (new_num >= new_num1){
-            return false; // он создает дробь 0/1000000
+            return false;
         }
-        if (new_num < new_num1){
+        else{
             return true;
         }
     }
 
-
-    Fraction operator!= (const Fraction& fraction) const{
+    bool operator<= (const Fraction& fraction) const{
         int32_t new_num = _num * fraction._denom;
-        uint32_t new_denom = _denom * fraction._denom;
         int32_t new_num1 = fraction._num * _denom;
-        uint32_t new_denom1 = fraction._denom * _denom;
-        if (new_num == new_num1){
-            return false; // он создает дробь 0/1000000
+        if (new_num > new_num1){
+            return false;
         }
-        if (new_num < new_num1 && new_num > new_num1){
+        else{
             return true;
+        }
+    }
+
+    bool operator>= (const Fraction& fraction) const{
+        int32_t new_num = _num * fraction._denom;
+        int32_t new_num1 = fraction._num * _denom;
+        if (new_num < new_num1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    bool operator!= (const Fraction& fraction) const{
+        int32_t new_num = _num * fraction._denom;
+        int32_t new_num1 = fraction._num * _denom;
+        if (new_num == new_num1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    bool operator== (const Fraction& fraction) const{
+        int32_t new_num = _num * fraction._denom;
+        int32_t new_num1 = fraction._num * _denom;
+        if (new_num == new_num1){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
     // Перегрузка операции смена знака
-    Fraction& operator~() { //???????
+    Fraction& operator~() {
         _num = -_num;
         return *this;
     }
 
+    Fraction operator^ (const double st) const{
+        int32_t new_num = pow(_num, st);
+        int32_t new_denom = pow(_denom, st);
+        Fraction res = Fraction(new_num, new_denom);
+        return res;
+    }
 
+    Fraction& operator++ (){
+        _num = _num + _denom;
+        return *this;
+    }
 
+    Fraction& operator-- (){
+        _num = _num - _denom;
+        return *this;
+    }
+
+    Fraction operator++ (int32_t tg){
+        Fraction res = Fraction(_num, _denom);
+        _num = _num + _denom;
+        return res;
+    }
+
+    Fraction operator-- (int32_t tg){
+        Fraction res = Fraction(_num, _denom);
+        _num = _num - _denom;
+        return res;
+    }
 
     // Перегрузка операции равно
     Fraction& operator= (const Fraction& fraction){
