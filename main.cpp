@@ -21,7 +21,7 @@ int main(){
     Fraction result4 = fract / fract_copy;
     std::cout << result4 << std:: endl;
 
-    if (fract > fract_copy){
+    if (fract > fract_copy){ // операция больше
         std::cout << "true" << std::endl;
     }
     else std::cout << "false" << std::endl;
@@ -31,7 +31,7 @@ int main(){
     }
     else std::cout << "false" << std::endl;
 
-    if (fract != fract_copy){
+    if (fract != fract_copy){ // операция не равно
         std::cout << "true" << std::endl;
     }
     else std::cout << "false" << std::endl;
@@ -41,7 +41,7 @@ int main(){
     }
     else std::cout << "false" << std::endl;
 
-    Fraction result5 = ~fract;
+    Fraction result5 = ~fract; // смена знака
     std::cout << result5;
 
     Fraction result6 = fract++;

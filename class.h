@@ -23,7 +23,7 @@ public:
     Fraction(const Fraction& fract /*передаем ссылку чтобы не тратить память*/);
 
     // Перегрузка операции сложения 
-    Fraction operator+ (const Fraction& fraction /*так принято*/) const /*нельзя изменять поля*/{
+    Fraction operator+ (const Fraction& fraction) const /*нельзя изменять поля*/{
         int32_t new_num = _num * fraction._denom + fraction._num * _denom;
         uint32_t new_denom = _denom * fraction._denom;
         Fraction res = Fraction(new_num, new_denom);
@@ -55,15 +55,10 @@ public:
     }
 
     // Перегрузка операции больше
-    bool operator> (const Fraction& fraction) const /*мы НЕ меняем объект класса*/{
+    bool operator> (const /*объект типа Fraction не будет изменен при обращении к нему через ссылку*/ Fraction& fraction) const /*мы НЕ меняем объект класса*/{
         int32_t new_num = _num * fraction._denom;
         int32_t new_num1 = fraction._num * _denom;
-        if (new_num <= new_num1){
-            return false;
-        }
-        else{
-            return true;
-        }
+        return !(new_num <= new_num1);
     }
 
     // Перегрузка операции меньше
@@ -145,13 +140,13 @@ public:
         return *this;
     }
 
-    Fraction operator++ (int32_t tg){
+    Fraction operator++ (int32_t){
         Fraction res = Fraction(_num, _denom);
         _num = _num + _denom;
         return res;
     }
 
-    Fraction operator-- (int32_t tg){
+    Fraction operator-- (int32_t){
         Fraction res = Fraction(_num, _denom);
         _num = _num - _denom;
         return res;
